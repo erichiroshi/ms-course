@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -33,6 +34,7 @@ public class User implements Serializable {
 	@Id	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Setter private Long id;
 
+	@Column(unique = true)
 	@Setter private String name;
 	@Setter private String email;
 	@Setter private String password;
